@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --section-pad: clamp(5.5rem, 9vw, 9rem);
+  --navy-950: #071126;
+  --navy-900: #0b1733;
+  --navy-800: #172f5d;
+  --gold-200: #f7d77d;
+  --gold-400: #cf9140;
+  --sand-50: #fbf7ee;
+  --sand-100: #f5ead7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #fbf7ee 0%, #f5ead7 44%, #071126 100%);
+  color: #ffffff;
+  font-family: var(--font-cairo), Tajawal, Arial, sans-serif;
+  line-height: 1.85;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.33;
+  letter-spacing: 0;
+}
+
+.arabic-heading {
+  line-height: 1.33 !important;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+::selection {
+  background: rgba(221, 184, 76, 0.38);
+  color: #ffffff;
+}
+
+.section-pad {
+  padding-block: var(--section-pad);
+}
+
+.nav-solid {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(11, 23, 51, 0.12);
+  box-shadow: 0 14px 40px rgba(7, 17, 38, 0.12);
+}
+
+.nav-solid .nav-link,
+.nav-solid .nav-icon {
+  color: var(--navy-950);
+}
+
+.nav-solid .nav-link:hover {
+  color: #b87536;
+  background: rgba(184, 117, 54, 0.08);
+}
+
+.nav-solid .lang-switch {
+  border-color: rgba(11, 23, 51, 0.14);
+  color: var(--navy-950);
+  background: rgba(245, 234, 215, 0.52);
+}
+
+.nav-solid .whatsapp-main {
+  background: var(--navy-950);
+  color: #ffffff;
+}
+
+.nav-dark {
+  background: rgba(7, 17, 38, 0.82);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 42px rgba(7, 17, 38, 0.22);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #fff9e8, #f7d77d 45%, #cf9140);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 249, 232, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 24px 80px rgba(7, 17, 38, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.hero-panel {
+  background:
+    linear-gradient(145deg, rgba(11, 23, 51, 0.78), rgba(23, 47, 93, 0.44)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(247, 215, 125, 0.1));
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.hero-panel h1,
+.hero-panel p {
+  text-shadow: 0 2px 18px rgba(7, 17, 38, 0.55);
+}
+
+.luxury-border {
+  position: relative;
+}
+
+.luxury-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(247, 215, 125, 0.8), rgba(255, 255, 255, 0.3), rgba(207, 145, 64, 0.42));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.noise {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.surface-light {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(247, 215, 125, 0.26), transparent 34%),
+    linear-gradient(180deg, #fbf7ee 0%, #f5ead7 100%) !important;
+  color: var(--navy-950);
+}
+
+.surface-light .text-white,
+.surface-light .text-white\/46,
+.surface-light .text-white\/58,
+.surface-light .text-white\/60,
+.surface-light .text-white\/62,
+.surface-light .text-white\/64,
+.surface-light .text-white\/66,
+.surface-light .text-white\/68,
+.surface-light .text-white\/72,
+.surface-light .text-white\/74,
+.surface-light .text-white\/78,
+.surface-light .text-white\/80 {
+  color: var(--navy-950) !important;
+}
+
+.surface-light .bg-white\/\[0\.04\],
+.surface-light .bg-white\/\[0\.045\],
+.surface-light .bg-white\/\[0\.07\],
+.surface-light .bg-ink-950\/62,
+.surface-light .bg-ink-950\/64,
+.surface-light .bg-ink-950\/70,
+.surface-light .bg-ink-950\/72 {
+  background: rgba(255, 255, 255, 0.74) !important;
+}
+
+.surface-light .border-white\/10,
+.surface-light .border-white\/12,
+.surface-light .border-white\/14 {
+  border-color: rgba(11, 23, 51, 0.12) !important;
+}
+
+.surface-light .text-gold-100,
+.surface-light .text-gold-200 {
+  color: #b87536 !important;
+}

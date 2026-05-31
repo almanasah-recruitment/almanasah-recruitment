@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-gradient-to-b from-ink-900 to-ink-950 py-12">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr_0.8fr_0.8fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-20 w-48 items-center justify-center rounded-3xl bg-white/95 px-4 shadow-gold ring-1 ring-gold-200/35">
-                <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain" />
+            <div className="flex items-center gap-4">
+              <div className="flex h-28 w-64 items-center justify-center rounded-3xl bg-white/95 px-5 shadow-gold ring-1 ring-gold-200/35">
+                <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-24 w-auto object-contain" />
               </div>
             </div>
             <p className="mt-5 max-w-sm leading-8 text-white/58">
@@ -32,7 +32,7 @@ export default function Footer() {
             <h3 className="arabic-heading font-black text-white">معلومات التواصل</h3>
             <div className="mt-5 grid gap-3 text-sm font-bold text-white/58">
               <span>{contact.phone}</span>
-              <span>{contact.whatsapp}</span>
+              <span>{contact.mobileDisplay}</span>
               <span>{contact.email}</span>
               <span>{contact.address}</span>
             </div>

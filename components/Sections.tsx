@@ -2,9 +2,8 @@ import Link from "next/link";
 import { ExternalLink, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { contact, countries, faqs, features, services, steps, testimonials } from "@/lib/data";
 import { Container, PrimaryButton, SectionHeading } from "@/components/ui";
-import { MotionDiv, MotionSection, reveal } from "@/components/Motion";
+import { MotionSection, reveal } from "@/components/Motion";
 import FAQAccordion from "@/components/FAQAccordion";
-import ContactForm from "@/components/ContactForm";
 
 const officeMapEmbedUrl =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7418.073016431557!2d39.207418!3d21.623501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9dd42fa6edeb8d75!2z2KfZhNmF2YbYtdipINin2YTYsNmH2KjZitipINmE2YTYpdiz2KrZgtiv2KfZhQ!5e0!3m2!1sar!2sus!4v1656880675871!5m2!1sar!2sus";
@@ -139,7 +138,7 @@ export function CountriesSection({ compact = false }: { compact?: boolean }) {
           <SectionHeading
             eyebrow="دول الاستقدام"
             title="خيارات متعددة وسير ذاتية بعناية"
-            body="نعرض لك الدول المتاحة مع مدة تقريبية ومسار طلب واضح حسب الأنظمة والتوفر."
+            body="من الدول المصدرة للعمالة المنزلية المصرح بها من قبل وزارة الموارد البشرية والتنمية الاجتماعية."
           />
         ) : null}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
@@ -245,7 +244,7 @@ export function ContactCTA() {
                 </Link>
                 <Link href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
                   <MessageCircle className="h-5 w-5 text-gold-100" />
-                  <span className="font-bold text-white">{contact.whatsapp}</span>
+                  <span className="font-bold text-white">{contact.mobileDisplay}</span>
                 </Link>
                 <Link href={`mailto:${contact.email}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
                   <Mail className="h-5 w-5 text-gold-100" />
@@ -282,17 +281,14 @@ export function ContactBlock() {
   return (
     <section className="surface-light pb-24 pt-36 md:pb-32">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <SectionHeading
               align="start"
               eyebrow="تواصل معنا"
               title="نحن قريبون من طلبك"
-              body="املأ النموذج أو تواصل مباشرة عبر القنوات الرسمية وسيعود لك فريقنا بخطوة واضحة."
+              body="تواصل مباشرة عبر القنوات الرسمية أو افتح موقع المكتب على الخريطة، وسيعود لك فريقنا بخطوة واضحة."
             />
-            <div className="mt-8">
-              <OfficeMapCard compact />
-            </div>
             <div className="mt-8 grid gap-3">
               <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
                 <MapPin className="h-5 w-5 text-gold-100" />
@@ -302,13 +298,17 @@ export function ContactBlock() {
                 <Phone className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.phone}</span>
               </div>
+              <Link href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
+                <MessageCircle className="h-5 w-5 text-gold-100" />
+                <span className="text-white/78">{contact.mobileDisplay}</span>
+              </Link>
               <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
                 <Mail className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.email}</span>
               </div>
             </div>
           </div>
-          <ContactForm />
+          <OfficeMapCard />
         </div>
       </Container>
     </section>

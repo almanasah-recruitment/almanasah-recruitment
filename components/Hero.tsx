@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { contact, heroSlides, serviceRequests, stats } from "@/lib/data";
 import { Container } from "@/components/ui";
@@ -15,32 +14,15 @@ const ctas = [
 ];
 
 export default function Hero() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActive((current) => (current + 1) % heroSlides.length);
-    }, 5200);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const slide = heroSlides[active];
+  const slide = heroSlides[0];
 
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-ink-950 pt-24">
-      {heroSlides.map((item, index) => (
-        <div
-          key={item.title}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: index === active ? 1 : 0 }}
-          aria-hidden={index !== active}
-        >
-          <img src={item.image} alt="" className="h-full w-full object-cover brightness-[0.78] saturate-[0.95]" />
-        </div>
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-l from-ink-950/92 via-ink-900/76 to-ink-800/42" />
-      <div className="absolute inset-0 noise opacity-35" />
+    <section className="relative isolate min-h-screen overflow-hidden bg-ink-950 pt-28">
+      <div className="absolute inset-0">
+        <img src={slide.image} alt="" className="h-full w-full object-cover brightness-[0.95] saturate-[1.05]" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-l from-ink-950/78 via-ink-900/46 to-ink-800/18" />
+      <div className="absolute inset-0 noise opacity-18" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-900 to-transparent" />
 
       <Container className="relative flex min-h-[calc(100vh-5rem)] items-center py-8">
@@ -87,17 +69,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-7 right-1/2 flex translate-x-1/2 gap-2">
-          {heroSlides.map((item, index) => (
-            <button
-              key={item.title}
-              type="button"
-              onClick={() => setActive(index)}
-              className={`h-2.5 rounded-full transition-all ${index === active ? "w-10 bg-gold-200" : "w-2.5 bg-white/40"}`}
-              aria-label={`عرض الشريحة ${index + 1}`}
-            />
-          ))}
-        </div>
       </Container>
     </section>
   );

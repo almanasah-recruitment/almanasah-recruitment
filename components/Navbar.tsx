@@ -18,10 +18,16 @@ export default function Navbar() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
-      <nav className="mx-auto flex h-24 max-w-[88rem] items-center justify-between px-5 sm:px-7 lg:px-10">
-        <Link href="/" className="flex items-center gap-3" aria-label="شركة المنصة">
-          <div className="flex h-16 w-44 items-center justify-center rounded-2xl bg-white px-4 shadow-gold ring-1 ring-gold-200/35">
-            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-14 w-auto object-contain" />
+      <nav className="mx-auto flex h-28 max-w-[94rem] items-center justify-between gap-4 px-5 sm:px-7 lg:px-10">
+        <Link href="/" className="flex min-w-0 items-center gap-4" aria-label="شركة المنصة الذهبية للاستقدام">
+          <div className="flex h-20 w-52 shrink-0 items-center justify-center rounded-3xl bg-white px-4 shadow-gold ring-1 ring-gold-200/35 md:h-24 md:w-60">
+            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-20" />
+          </div>
+          <div className="hidden min-w-0 xl:block">
+            <p className="arabic-heading text-xl font-black leading-[1.35] text-white nav-link md:text-2xl">
+              شركة المنصة الذهبية للاستقدام
+            </p>
+            <p className="mt-1 text-sm font-bold text-gold-100">حلول استقدام موثوقة داخل المملكة</p>
           </div>
         </Link>
 

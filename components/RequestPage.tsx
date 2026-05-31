@@ -24,7 +24,7 @@ export default function RequestPage({ type }: { type: RequestType }) {
               <div className="mt-9 rounded-3xl border border-white/10 bg-white/[0.045] p-6">
                 <p className="text-xl font-black text-white">كيف يعمل الطلب؟</p>
                 <p className="mt-3 text-lg leading-9 text-white/62">
-                  أكمل الخيارات، راجع الرسالة، ثم افتح واتساب برسالة جاهزة لفريق شركة المنصة.
+                  أكمل البيانات المطلوبة ثم اضغط إرسال عبر واتساب ليصل الطلب مباشرة إلى فريق شركة المنصة.
                 </p>
               </div>
             </div>

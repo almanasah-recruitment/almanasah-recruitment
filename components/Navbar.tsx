@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChevronDown, Languages, Menu, MessageCircle, X } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import { contact, navLinks } from "@/lib/data";
 
 export default function Navbar() {
@@ -18,8 +18,8 @@ export default function Navbar() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
-      <nav className="mx-auto flex h-28 max-w-[94rem] items-center justify-between gap-4 px-5 sm:px-7 lg:px-10">
-        <Link href="/" className="flex min-w-0 items-center gap-4" aria-label="شركة المنصة الذهبية للاستقدام">
+      <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
+        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-4" aria-label="شركة المنصة الذهبية للاستقدام">
           <div className="flex h-20 w-52 shrink-0 items-center justify-center rounded-3xl bg-white px-4 shadow-gold ring-1 ring-gold-200/35 md:h-24 md:w-60">
             <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-20" />
           </div>
@@ -27,16 +27,15 @@ export default function Navbar() {
             <p className="arabic-heading text-xl font-black leading-[1.35] text-white nav-link md:text-2xl">
               شركة المنصة الذهبية للاستقدام
             </p>
-            <p className="mt-1 text-sm font-bold text-gold-100">حلول استقدام موثوقة داخل المملكة</p>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex">
           {navLinks.map((link) => (
             <div key={link.href} className="group relative">
               <Link
                 href={link.href}
-                className="nav-link inline-flex items-center gap-1 rounded-full px-4 py-2.5 text-base font-extrabold text-white/82 transition hover:bg-white/10 hover:text-gold-100"
+                className="nav-link inline-flex whitespace-nowrap items-center gap-1 rounded-full px-2.5 py-2.5 text-sm font-extrabold text-white/82 transition hover:bg-white/10 hover:text-gold-100 xl:px-3.5 xl:text-base"
               >
                 {link.label}
                 {"dropdown" in link ? <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" /> : null}
@@ -58,11 +57,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <button className="lang-switch inline-flex h-12 items-center gap-2 rounded-full border border-white/18 bg-white/8 px-5 text-sm font-extrabold text-white/90 transition hover:border-gold-200/50 hover:text-gold-100">
-            <Languages className="h-4 w-4" />
-            AR / EN
-          </button>
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <Link
             href={`https://wa.me/${contact.whatsapp}`}
             className="whatsapp-main inline-flex h-12 items-center gap-2 rounded-full bg-white px-5 text-sm font-black text-ink-950 transition hover:bg-gold-100"
@@ -110,11 +105,7 @@ export default function Navbar() {
                 ) : null}
               </div>
             ))}
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <button className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-ink-950/12 text-sm font-bold text-ink-950">
-                <Languages className="h-4 w-4" />
-                AR / EN
-              </button>
+            <div className="mt-3 grid gap-3">
               <Link
                 href={`https://wa.me/${contact.whatsapp}`}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink-950 text-sm font-black text-white"

@@ -20,11 +20,11 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
       <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
         <Link href="/" className="flex min-w-0 shrink-0 items-center gap-4" aria-label="شركة المنصة الذهبية للاستقدام">
-          <div className="flex h-20 w-52 shrink-0 items-center justify-center rounded-3xl bg-white px-4 shadow-gold ring-1 ring-gold-200/35 md:h-24 md:w-60">
-            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-20" />
+          <div className="flex h-20 w-48 shrink-0 items-center justify-center md:w-56">
+            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-[4.5rem]" />
           </div>
           <div className="hidden min-w-0 xl:block">
-            <p className="arabic-heading text-xl font-black leading-[1.35] text-white nav-link md:text-2xl">
+            <p className="arabic-heading text-lg font-black leading-[1.35] text-white nav-link md:text-xl">
               شركة المنصة الذهبية للاستقدام
             </p>
           </div>
@@ -35,7 +35,7 @@ export default function Navbar() {
             <div key={link.href} className="group relative">
               <Link
                 href={link.href}
-                className="nav-link inline-flex whitespace-nowrap items-center gap-1 rounded-full px-2.5 py-2.5 text-sm font-extrabold text-white/82 transition hover:bg-white/10 hover:text-gold-100 xl:px-3.5 xl:text-base"
+                className="nav-link inline-flex whitespace-nowrap items-center gap-1 rounded-full px-2.5 py-2.5 text-[0.82rem] font-extrabold text-white/82 transition hover:bg-white/10 hover:text-gold-100 xl:px-3 xl:text-sm"
               >
                 {link.label}
                 {"dropdown" in link ? <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" /> : null}

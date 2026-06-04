@@ -21,9 +21,14 @@ export default function Navbar() {
       <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
         <Link href="/" className="flex min-w-0 flex-1 items-center md:flex-none md:shrink-0" aria-label="شركة المنصة الذهبية للاستقدام">
           <img
-            src="/header-logo-full.png"
+            src="/header-logo-mobile.png"
             alt="شركة المنصة الذهبية للاستقدام"
-            className="h-auto max-h-20 w-[13.5rem] object-contain sm:w-72 md:w-80 lg:w-[22rem] xl:w-[24rem]"
+            className="h-auto max-h-20 w-[min(15rem,calc(100vw-7rem))] object-contain sm:w-64 md:hidden"
+          />
+          <img
+            src="/header-logo-desktop.png"
+            alt="شركة المنصة الذهبية للاستقدام"
+            className="hidden h-auto max-h-20 w-80 object-contain md:block lg:w-[24rem] xl:w-[28rem]"
           />
         </Link>
 

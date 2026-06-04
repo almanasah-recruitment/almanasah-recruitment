@@ -19,15 +19,12 @@ export default function Navbar() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
       <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
-        <Link href="/" className="flex min-w-0 flex-1 items-center gap-2 md:flex-none md:shrink-0 md:gap-3" aria-label="شركة المنصة الذهبية للاستقدام">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center md:w-24 xl:w-28">
-            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-[4.35rem] w-auto object-contain md:max-h-[4.8rem] xl:max-h-20" />
-          </div>
-          <div className="block min-w-0 max-w-[12rem] sm:max-w-xs xl:max-w-sm">
-            <p className="arabic-heading text-[0.8rem] font-black leading-[1.35] text-white nav-link sm:text-sm md:text-base xl:text-lg">
-              شركة المنصة الذهبية للاستقدام
-            </p>
-          </div>
+        <Link href="/" className="flex min-w-0 flex-1 items-center md:flex-none md:shrink-0" aria-label="شركة المنصة الذهبية للاستقدام">
+          <img
+            src="/header-logo-full.png"
+            alt="شركة المنصة الذهبية للاستقدام"
+            className="h-auto max-h-20 w-[13.5rem] object-contain sm:w-72 md:w-80 lg:w-[22rem] xl:w-[24rem]"
+          />
         </Link>
 
         <div className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex">

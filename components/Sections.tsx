@@ -159,9 +159,10 @@ export function CountriesSection({ compact = false }: { compact?: boolean }) {
               <div className="p-7 text-center">
                 <h3 className="arabic-heading text-2xl font-black text-white md:text-[1.75rem]">{country.name}</h3>
                 <p className="mt-3 text-sm font-black uppercase tracking-normal text-gold-100">{country.en}</p>
-                <p className="mx-auto mt-4 max-w-xs text-base leading-8 text-white/62">
-                  جنسية متاحة للاستقدام، مدة الاستقدام {country.duration}
-                </p>
+                <div className="mx-auto mt-4 grid max-w-xs gap-2 text-base leading-8 text-white/62">
+                  <p>مدة الوصول: {country.duration}</p>
+                  <p>التعاقد والدفع عن طريق مساند</p>
+                </div>
                 <Link
                   href={buildCountryWhatsAppUrl(country.name)}
                   target="_blank"

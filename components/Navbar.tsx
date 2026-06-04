@@ -19,8 +19,8 @@ export default function Navbar() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
       <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
-        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-4" aria-label="شركة المنصة الذهبية للاستقدام">
-          <div className="flex h-20 w-48 shrink-0 items-center justify-center md:w-56">
+        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2 md:gap-3" aria-label="شركة المنصة الذهبية للاستقدام">
+          <div className="flex h-20 w-40 shrink-0 items-center justify-center md:w-44">
             <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-[4.5rem]" />
           </div>
           <div className="hidden min-w-0 xl:block">

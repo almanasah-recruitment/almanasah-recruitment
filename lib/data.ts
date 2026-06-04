@@ -169,37 +169,37 @@ export const countries = [
   {
     name: "الفلبين",
     en: "Philippines",
-    duration: "حسب توفر الطلبات",
+    duration: "45 يوم",
     flag: "https://flagcdn.com/w640/ph.png"
   },
   {
     name: "إثيوبيا",
     en: "Ethiopia",
-    duration: "حسب المسار الرسمي",
+    duration: "30 يوم",
     flag: "https://flagcdn.com/w640/et.png"
   },
   {
     name: "أوغندا",
     en: "Uganda",
-    duration: "خلال 60 يوم",
+    duration: "35 يوم",
     flag: "https://flagcdn.com/w640/ug.png"
   },
   {
     name: "كينيا",
     en: "Kenya",
-    duration: "خلال 60 يوم",
+    duration: "30 يوم",
     flag: "https://flagcdn.com/w640/ke.png"
   },
   {
     name: "بنغلاديش",
     en: "Bangladesh",
-    duration: "حسب توفر السير",
+    duration: "40 يوم",
     flag: "https://flagcdn.com/w640/bd.png"
   },
   {
     name: "تنزانيا",
     en: "Tanzania",
-    duration: "حسب توفر الطلبات",
+    duration: "45 يوم",
     flag: "https://flagcdn.com/w640/tz.png"
   }
 ];

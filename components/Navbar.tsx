@@ -19,12 +19,12 @@ export default function Navbar() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition duration-300 ${scrolled || open ? "nav-solid" : "nav-dark"}`}>
       <nav className="mx-auto flex h-28 max-w-[98rem] items-center justify-between gap-3 px-5 sm:px-7 lg:px-8">
-        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2 md:gap-3" aria-label="شركة المنصة الذهبية للاستقدام">
-          <div className="flex h-20 w-40 shrink-0 items-center justify-center md:w-44">
-            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-16 w-auto object-contain md:max-h-[4.5rem]" />
+        <Link href="/" className="flex min-w-0 flex-1 items-center gap-2 md:flex-none md:shrink-0 md:gap-3" aria-label="شركة المنصة الذهبية للاستقدام">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center md:w-24 xl:w-28">
+            <img src="/logo-almnsa.png" alt="شركة المنصة الذهبية للاستقدام" className="max-h-[4.35rem] w-auto object-contain md:max-h-[4.8rem] xl:max-h-20" />
           </div>
-          <div className="hidden min-w-0 xl:block">
-            <p className="arabic-heading text-lg font-black leading-[1.35] text-white nav-link md:text-xl">
+          <div className="block min-w-0 max-w-[12rem] sm:max-w-xs xl:max-w-sm">
+            <p className="arabic-heading text-[0.8rem] font-black leading-[1.35] text-white nav-link sm:text-sm md:text-base xl:text-lg">
               شركة المنصة الذهبية للاستقدام
             </p>
           </div>

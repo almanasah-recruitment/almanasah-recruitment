@@ -4,6 +4,7 @@ import { contact, countries, faqs, features, services, steps, testimonials } fro
 import { Container, PrimaryButton, SectionHeading } from "@/components/ui";
 import { MotionSection, reveal } from "@/components/Motion";
 import FAQAccordion from "@/components/FAQAccordion";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const officeMapEmbedUrl =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7418.073016431557!2d39.207418!3d21.623501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9dd42fa6edeb8d75!2z2KfZhNmF2YbYtdipINin2YTYsNmH2KjZitipINmE2YTYpdiz2KrZgtiv2KfZhQ!5e0!3m2!1sar!2sus!4v1656880675871!5m2!1sar!2sus";
@@ -72,22 +73,27 @@ export function ServicesGrid({ compact = false }: { compact?: boolean }) {
           {services.map((service) => {
             const isSupportService = service.title === "الدعم والمتابعة";
             const href = isSupportService ? supportWhatsAppUrl : service.href;
+            const cardContent = (
+              <>
+                <div className="grid h-16 w-16 place-items-center rounded-2xl bg-gold-200/12 text-gold-100 transition group-hover:bg-gold-200 group-hover:text-ink-950">
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <h3 className="arabic-heading mt-8 max-w-sm text-xl font-black text-white md:text-2xl">{service.title}</h3>
+                <p className="mt-5 text-lg leading-10 text-white/62">{service.body}</p>
+              </>
+            );
+            const cardClassName = "group rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold-200/35";
 
-            return (
-            <Link
-              key={service.title}
-              href={href}
-              target={isSupportService ? "_blank" : undefined}
-              rel={isSupportService ? "noreferrer" : undefined}
-              className="group rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold-200/35"
-            >
-              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-gold-200/12 text-gold-100 transition group-hover:bg-gold-200 group-hover:text-ink-950">
-                <service.icon className="h-8 w-8" />
-              </div>
-              <h3 className="arabic-heading mt-8 max-w-sm text-xl font-black text-white md:text-2xl">{service.title}</h3>
-              <p className="mt-5 text-lg leading-10 text-white/62">{service.body}</p>
-            </Link>
-          )})}
+            return isSupportService ? (
+              <WhatsAppLink key={service.title} href={href} className={cardClassName}>
+                {cardContent}
+              </WhatsAppLink>
+            ) : (
+              <Link key={service.title} href={href} className={cardClassName}>
+                {cardContent}
+              </Link>
+            );
+          })}
         </div>
       </Container>
     </MotionSection>
@@ -163,14 +169,12 @@ export function CountriesSection({ compact = false }: { compact?: boolean }) {
                   <p>مدة الوصول: {country.duration}</p>
                   <p>التعاقد والدفع عن طريق مساند</p>
                 </div>
-                <Link
+                <WhatsAppLink
                   href={buildCountryWhatsAppUrl(country.name)}
-                  target="_blank"
-                  rel="noreferrer"
                   className="mt-7 inline-flex rounded-full bg-gold-200 px-6 py-3 text-sm font-black text-ink-950 transition hover:bg-white"
                 >
                   اطلب الآن
-                </Link>
+                </WhatsAppLink>
               </div>
             </div>
           ))}
@@ -243,10 +247,10 @@ export function ContactCTA() {
                   <Phone className="h-5 w-5 text-gold-100" />
                   <span className="font-bold text-white">{contact.phone}</span>
                 </Link>
-                <Link href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
+                <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
                   <MessageCircle className="h-5 w-5 text-gold-100" />
                   <span className="font-bold text-white">{contact.mobileDisplay}</span>
-                </Link>
+                </WhatsAppLink>
                 <Link href={`mailto:${contact.email}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
                   <Mail className="h-5 w-5 text-gold-100" />
                   <span className="font-bold text-white">{contact.email}</span>
@@ -299,10 +303,10 @@ export function ContactBlock() {
                 <Phone className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.phone}</span>
               </div>
-              <Link href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
+              <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
                 <MessageCircle className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.mobileDisplay}</span>
-              </Link>
+              </WhatsAppLink>
               <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
                 <Mail className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.email}</span>

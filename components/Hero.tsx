@@ -5,6 +5,7 @@ import { ArrowLeft, MessageCircle } from "lucide-react";
 import { contact, heroSlides, serviceRequests, stats } from "@/lib/data";
 import { Container } from "@/components/ui";
 import { MotionDiv } from "@/components/Motion";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const ctas = [
   serviceRequests[0],
@@ -41,20 +42,24 @@ export default function Hero() {
               {slide.title}
             </h1>
             <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {ctas.map((cta, index) => (
-                <Link
-                  key={cta.label}
-                  href={cta.href}
-                  className={
-                    index === 0
-                      ? "inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-gold-200 px-5 text-base font-black text-ink-950 shadow-gold transition hover:-translate-y-0.5 hover:bg-white"
-                      : "inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl border border-white/18 bg-ink-950/62 px-5 text-base font-black text-white transition hover:-translate-y-0.5 hover:border-gold-200/55 hover:text-gold-100"
-                  }
-                >
-                  {"whatsapp" in cta ? <MessageCircle className="h-4 w-4" /> : <ArrowLeft className="h-4 w-4" />}
-                  {cta.label}
-                </Link>
-              ))}
+              {ctas.map((cta, index) => {
+                const className =
+                  index === 0
+                    ? "inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-gold-200 px-5 text-base font-black text-ink-950 shadow-gold transition hover:-translate-y-0.5 hover:bg-white"
+                    : "inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl border border-white/18 bg-ink-950/62 px-5 text-base font-black text-white transition hover:-translate-y-0.5 hover:border-gold-200/55 hover:text-gold-100";
+
+                return "whatsapp" in cta ? (
+                  <WhatsAppLink key={cta.label} href={cta.href} className={className}>
+                    <MessageCircle className="h-4 w-4" />
+                    {cta.label}
+                  </WhatsAppLink>
+                ) : (
+                  <Link key={cta.label} href={cta.href} className={className}>
+                    <ArrowLeft className="h-4 w-4" />
+                    {cta.label}
+                  </Link>
+                );
+              })}
             </div>
             <p className="mt-8 max-w-3xl text-base leading-10 text-white/82 md:text-lg">{slide.body}</p>
           </MotionDiv>

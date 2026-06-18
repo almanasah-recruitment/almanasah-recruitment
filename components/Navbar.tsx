@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 import { contact, navLinks } from "@/lib/data";
 
 export default function Navbar() {
@@ -60,13 +61,13 @@ export default function Navbar() {
         </div>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
-          <Link
+          <WhatsAppLink
             href={`https://wa.me/${contact.whatsapp}`}
             className="whatsapp-main inline-flex h-12 items-center gap-2 rounded-full bg-white px-5 text-sm font-black text-ink-950 transition hover:bg-gold-100"
           >
             <MessageCircle className="h-4 w-4" />
             واتساب
-          </Link>
+          </WhatsAppLink>
         </div>
 
         <button
@@ -108,13 +109,13 @@ export default function Navbar() {
               </div>
             ))}
             <div className="mt-3 grid gap-3">
-              <Link
+              <WhatsAppLink
                 href={`https://wa.me/${contact.whatsapp}`}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink-950 text-sm font-black text-white"
               >
                 <MessageCircle className="h-4 w-4" />
                 واتساب
-              </Link>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

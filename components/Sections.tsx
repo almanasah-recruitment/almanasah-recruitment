@@ -5,6 +5,7 @@ import { Container, PrimaryButton, SectionHeading } from "@/components/ui";
 import { MotionSection, reveal } from "@/components/Motion";
 import FAQAccordion from "@/components/FAQAccordion";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import CountryApplyLink from "@/components/CountryApplyLink";
 
 const officeMapEmbedUrl =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7418.073016431557!2d39.207418!3d21.623501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9dd42fa6edeb8d75!2z2KfZhNmF2YbYtdipINin2YTYsNmH2KjZitipINmE2YTYpdiz2KrZgtiv2KfZhQ!5e0!3m2!1sar!2sus!4v1656880675871!5m2!1sar!2sus";
@@ -131,7 +132,14 @@ export function StepsTimeline() {
   );
 }
 
-export function CountriesSection({ compact = false }: { compact?: boolean }) {
+export function CountriesSection({
+  compact = false,
+  trackApplyConversion = false
+}: {
+  compact?: boolean;
+  trackApplyConversion?: boolean;
+}) {
+  const ApplyLink = trackApplyConversion ? CountryApplyLink : WhatsAppLink;
   const buildCountryWhatsAppUrl = (countryName: string) => {
     const message = `مرحبًا، أريد طلب استقدام\nالجنسية: ${countryName}`;
     return `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -169,12 +177,12 @@ export function CountriesSection({ compact = false }: { compact?: boolean }) {
                   <p>مدة الوصول: {country.duration}</p>
                   <p>التعاقد والدفع عن طريق مساند</p>
                 </div>
-                <WhatsAppLink
+                <ApplyLink
                   href={buildCountryWhatsAppUrl(country.name)}
                   className="mt-7 inline-flex rounded-full bg-gold-200 px-6 py-3 text-sm font-black text-ink-950 transition hover:bg-white"
                 >
                   اطلب الآن
-                </WhatsAppLink>
+                </ApplyLink>
               </div>
             </div>
           ))}

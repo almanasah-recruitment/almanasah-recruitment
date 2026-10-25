@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { contact, requestPageContent } from "@/lib/data";
-import { openWhatsAppWithConversion } from "@/lib/whatsappConversion";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 type RequestType = keyof typeof requestPageContent;
 type Field = {
@@ -58,7 +58,7 @@ export default function RequestForm({ type }: { type: RequestType }) {
 
   function submitToWhatsApp() {
     const message = encodeURIComponent(buildMessage());
-    openWhatsAppWithConversion(`https://wa.me/${contact.whatsapp}?text=${message}`);
+    openWhatsApp(`https://wa.me/${contact.whatsapp}?text=${message}`);
   }
 
   return (

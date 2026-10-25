@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
-import { openWhatsAppWithConversion } from "@/lib/whatsappConversion";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 type WhatsAppLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   href: string;
@@ -17,7 +17,7 @@ export default function WhatsAppLink({ href, children, onClick, ...props }: What
     }
 
     event.preventDefault();
-    openWhatsAppWithConversion(href);
+    openWhatsApp(href);
   }
 
   return (

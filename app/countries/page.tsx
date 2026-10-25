@@ -16,7 +16,7 @@ export default function CountriesPage() {
         title="دول متعددة وخيارات مرشحة بعناية"
         body="نعمل على توفير السير المناسبة من الدول المتاحة مع توضيح المدد والمتطلبات حسب توفر الطلبات."
       />
-      <CountriesSection compact />
+      <CountriesSection compact trackApplyConversion />
       <ContactCTA />
     </PageShell>
   );

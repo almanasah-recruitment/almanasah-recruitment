@@ -63,6 +63,8 @@ export default function Navbar() {
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <WhatsAppLink
             href={`https://wa.me/${contact.whatsapp}`}
+            ctaLocation="header"
+            serviceType="general"
             className="whatsapp-main inline-flex h-12 items-center gap-2 rounded-full bg-white px-5 text-sm font-black text-ink-950 transition hover:bg-gold-100"
           >
             <MessageCircle className="h-4 w-4" />
@@ -111,6 +113,8 @@ export default function Navbar() {
             <div className="mt-3 grid gap-3">
               <WhatsAppLink
                 href={`https://wa.me/${contact.whatsapp}`}
+                ctaLocation="mobile_menu"
+                serviceType="general"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink-950 text-sm font-black text-white"
               >
                 <MessageCircle className="h-4 w-4" />

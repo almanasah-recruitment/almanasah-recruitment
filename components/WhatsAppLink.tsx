@@ -1,14 +1,14 @@
 "use client";
 
 import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
-import { openWhatsAppWithConversion } from "@/lib/whatsappConversion";
+import { openWhatsAppWithTracking, type WhatsAppTrackingContext } from "@/lib/whatsappConversion";
 
-type WhatsAppLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+type WhatsAppLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & WhatsAppTrackingContext & {
   href: string;
   children: ReactNode;
 };
 
-export default function WhatsAppLink({ href, children, onClick, ...props }: WhatsAppLinkProps) {
+export default function WhatsAppLink({ href, children, onClick, ctaLocation, serviceType, ...props }: WhatsAppLinkProps) {
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     onClick?.(event);
 
@@ -17,7 +17,7 @@ export default function WhatsAppLink({ href, children, onClick, ...props }: What
     }
 
     event.preventDefault();
-    openWhatsAppWithConversion(href);
+    openWhatsAppWithTracking(href, { ctaLocation, serviceType });
   }
 
   return (

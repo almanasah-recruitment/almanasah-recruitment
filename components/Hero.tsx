@@ -49,7 +49,7 @@ export default function Hero() {
                     : "inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl border border-white/18 bg-ink-950/62 px-5 text-base font-black text-white transition hover:-translate-y-0.5 hover:border-gold-200/55 hover:text-gold-100";
 
                 return "whatsapp" in cta ? (
-                  <WhatsAppLink key={cta.label} href={cta.href} className={className}>
+                  <WhatsAppLink key={cta.label} href={cta.href} ctaLocation="hero" serviceType="general" className={className}>
                     <MessageCircle className="h-4 w-4" />
                     {cta.label}
                   </WhatsAppLink>

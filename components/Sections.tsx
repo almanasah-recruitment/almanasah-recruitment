@@ -85,7 +85,7 @@ export function ServicesGrid({ compact = false }: { compact?: boolean }) {
             const cardClassName = "group rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold-200/35";
 
             return isSupportService ? (
-              <WhatsAppLink key={service.title} href={href} className={cardClassName}>
+              <WhatsAppLink key={service.title} href={href} ctaLocation="support" serviceType="support" className={cardClassName}>
                 {cardContent}
               </WhatsAppLink>
             ) : (
@@ -171,6 +171,8 @@ export function CountriesSection({ compact = false }: { compact?: boolean }) {
                 </div>
                 <WhatsAppLink
                   href={buildCountryWhatsAppUrl(country.name)}
+                  ctaLocation="country_card"
+                  serviceType="recruitment"
                   className="mt-7 inline-flex rounded-full bg-gold-200 px-6 py-3 text-sm font-black text-ink-950 transition hover:bg-white"
                 >
                   اطلب الآن
@@ -247,7 +249,7 @@ export function ContactCTA() {
                   <Phone className="h-5 w-5 text-gold-100" />
                   <span className="font-bold text-white">{contact.phone}</span>
                 </Link>
-                <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
+                <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} ctaLocation="contact_cta" serviceType="general" className="flex items-center gap-3 rounded-3xl bg-ink-950/62 p-5">
                   <MessageCircle className="h-5 w-5 text-gold-100" />
                   <span className="font-bold text-white">{contact.mobileDisplay}</span>
                 </WhatsAppLink>
@@ -303,7 +305,7 @@ export function ContactBlock() {
                 <Phone className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.phone}</span>
               </div>
-              <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
+              <WhatsAppLink href={`https://wa.me/${contact.whatsapp}`} ctaLocation="contact_page" serviceType="general" className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
                 <MessageCircle className="h-5 w-5 text-gold-100" />
                 <span className="text-white/78">{contact.mobileDisplay}</span>
               </WhatsAppLink>
